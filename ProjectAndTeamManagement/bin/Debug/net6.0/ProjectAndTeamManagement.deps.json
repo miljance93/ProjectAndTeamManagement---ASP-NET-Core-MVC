@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ProjectAndTeamManagement/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.9",
           "Microsoft.EntityFrameworkCore.Design": "6.0.9",
           "Persistence": "1.0.0"
