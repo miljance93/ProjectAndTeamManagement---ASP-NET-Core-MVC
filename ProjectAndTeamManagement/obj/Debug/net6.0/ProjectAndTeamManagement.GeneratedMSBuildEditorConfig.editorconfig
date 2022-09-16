@@ -1,0 +1,96 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ProjectAndTeamManagement
+build_property.RootNamespace = ProjectAndTeamManagement
+build_property.ProjectDir = C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/AssignmentRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewProject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3JlYXRlTmV3UHJvamVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewTeam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3JlYXRlTmV3VGVhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CurrentAssignments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3VycmVudEFzc2lnbm1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectAssignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcUHJvamVjdEFzc2lnbm1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcUHJvamVjdE1hbmFnZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/TeamManagement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcVGVhbU1hbmFnZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/CreateEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/AssignmentRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdExlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/CurrentAssignments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdExlYWRcQ3VycmVudEFzc2lnbm1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/AssignmentRequests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/CurrentAssignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcQ3VycmVudEFzc2lnbm1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Team/CreateTeam.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxDcmVhdGVUZWFtLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-qhp4dc9ty4
