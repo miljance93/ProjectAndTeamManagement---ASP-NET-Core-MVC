@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+@model EmployeeVM
+
+
+<form method="post">
+  <div class="mb-3">
+    <label asp-for=FirstName class="form-label">First Name</label>
+    <input type="text" class="form-control" asp-for="FirstName" >
+  </div>
+  <div class="mb-3">
+    <label asp-for="LastName" class="form-label">Last Name</label>
+    <input type="text" class="form-control" asp-for="LastName">
+  </div>
+  <button type="submit" class="btn btn-primary" asp-controller="Employee" asp-action="CreateEmployee">Submit</button>
+</form>

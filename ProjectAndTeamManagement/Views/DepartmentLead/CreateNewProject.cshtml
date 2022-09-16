@@ -1,0 +1,47 @@
+﻿@using ProjectAndTeamManagement.Models.DepartmentLead
+@model CreateNewProject 
+
+<form asp-action="CreateNewProject" asp-controller="DepartmentLead" method="post" role="form">
+    <div class="form-group">
+        <label asp-for="Name" class="form-label">Project Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Project name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label asp-for="StartDate">Start Date</label>
+        <input asp-for="StartDate" type="datetime" value="2022-01-01T00:00" />
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label asp-for="EndDate" >End Date</label>
+        <input asp-for="EndDate" type="datetime" value="2022-01-01T00:00" />
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+
+    <br/>
+    <div class="form-group">
+        <label asp-for="Path" class="form-label">Path</label>
+        <input asp-for="Path" type="text" class="form-control" placeholder="Path" />
+        <span asp-validation-for="Path" class="text-danger"></span>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Select Project Lead</label>
+        <div class="col-md-5">
+            <select class="form-select" asp-for="ProjectStatusId" asp-items="@(new SelectList(Model.ProjectStatuses, "ProjectStatusId", "ProjectStatusName"))"></select>
+        </div>
+        <input type="hidden" asp-for="ProjectStatusId"  />
+    </div>
+    <br/>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Select Project Lead</label>
+        <div class="col-md-5">
+            <select class="form-select" asp-for="EmployeeId" asp-items="@(new SelectList(Model.Employees, "EmployeeId", "FullName"))"></select>
+        </div>
+        <input type="hidden" asp-for="EmployeeId"  />
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

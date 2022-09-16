@@ -1,0 +1,46 @@
+﻿@model EmployeesListVM
+
+@{
+    ViewData["Title"] = "Project Management";
+}
+
+<h2>Project Management</h2>
+<h4>Department Lead</h4>
+
+<div>
+
+    <div>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CreateNewProject", "DepartmentLead")'">Create New</button>
+    </div>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Path</th>
+      <th scope="col">Project Lead</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+     
+          @foreach(var project in Model.Projects)
+                {
+                     <tr>
+                    <td>@project.ProjectId</td>
+                    <td>@project.Name</td>
+                    <td>@project.StartDate</td>
+                    <td>@project.EndDate</td>
+                    <td>@project.Path</td>
+                    <td>@project.ProjectLead?.FullName</td>
+                    <td>@project.ProjectStatus?.ProjectStatusName</td>
+                     </tr>
+                }
+           
+    
+  </tbody>
+</table>
+</div>

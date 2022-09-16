@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewData["Title"] = "Team Management";
+}
+
+@model EmployeesListVM
+
+<h2>Team Management</h2>
+
+<div>
+
+    <div>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CreateNewTeam", "DepartmentLead")'">Create New</button>
+    </div>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Team</th>
+      <th scope="col">Team Lead</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+            @foreach(var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.EmployeeId</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Team.TeamName</td>
+                    <td>Team Lead HC</td>
+                    <td>
+                        @if(@employee.Team.TeamName == "Unassigned")
+                        {
+                            <button type="button" class="btn btn-primary">Assign to team</button>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-danger">Remove from team</button>
+                        }
+                    </td>
+                </tr>
+            }
+
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,58 @@
+﻿@using Domain
+@using ProjectAndTeamManagement.Models.DepartmentLead
+
+@{
+    ViewData["Title"] = "Project Assignments";
+}
+
+@model EmployeesListVM
+<h2>Project Assignments</h2>
+<h4>Department Lead</h4>
+
+
+<div>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Project</th>
+      <th scope="col">Team</th>
+      <th scope="col">Team Lead</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>      
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.EmployeeId</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Project?.Name</td>
+                    @if(@employee.Team != null) 
+                    {
+                        <td>@employee.Team.TeamName</td>
+                    }
+                    else
+                    {
+                        <td>Unassigned HC</td>
+                    }
+                    <td>@employee.Project?.ProjectLead?.FullName</td>
+                    <td>
+                        @if (@employee.Team?.TeamName == "Unassigned")
+                        {
+                            <button type="button" class="btn btn-primary">Assign to team</button>
+                        }
+                        else
+                        {
+                             <button type="button" class="btn btn-danger">Remove from team</button>
+                        }                       
+                        </td>
+                    </tr>
+                }
+  </tbody>
+</table>
+</div>

@@ -1,0 +1,10 @@
+﻿@using ProjectAndTeamManagement.Models.DepartmentLead
+@model CreateNewTeam
+
+<form asp-action="CreateNewTeam" asp-controller="DepartmentLead" method="post" role="form">
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Team Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Team name" />
+    </div>
+     <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
