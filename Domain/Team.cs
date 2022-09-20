@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Domain.IdentityAuth;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain
 {
@@ -6,9 +7,9 @@ namespace Domain
     {
         public int TeamId { get; set; } 
         public string TeamName { get; set; }
-        public List<Employee> Employees { get; set; }
         public int? ProjectId { get; set; }
         [ForeignKey("ProjectId")]
         public Project? Project { get; set; }
+        public List<ApplicationUser>? ApplicationEmployees { get; set; }
     }
 }

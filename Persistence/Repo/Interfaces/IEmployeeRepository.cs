@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.IdentityAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace Persistence.Repo.Interfaces
 {
     public interface IEmployeeRepository 
     {
-        IEnumerable<Employee> GetAll { get; }
-        bool CreateEmployee(Employee employee);
+        IEnumerable<ApplicationUser> GetAll { get; }
+        bool CreateEmployee(ApplicationUser user);
     }
 }

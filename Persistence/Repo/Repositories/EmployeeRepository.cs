@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.IdentityAuth;
 using Persistence.Repo.Interfaces;
 
 namespace Persistence.Repo.Repositories
@@ -11,21 +12,21 @@ namespace Persistence.Repo.Repositories
         {
             _context = context;
         }
-        public IEnumerable<Employee> GetAll
+        public IEnumerable<ApplicationUser> GetAll
         {
             get
             {
-                return _context.Employees.ToList();
+                return _context.Users.ToList();
             }
         }
 
-        public bool CreateEmployee(Employee employee)
+        public bool CreateEmployee(ApplicationUser user)
         {
             bool result;
 
             try
             {
-                _context.Employees.Add(employee);
+                _context.Users.Add(user);
                 _context.SaveChanges();
 
                 result = true;

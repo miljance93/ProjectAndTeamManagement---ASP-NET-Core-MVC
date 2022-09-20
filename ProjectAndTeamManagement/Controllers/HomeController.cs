@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProjectAndTeamManagement.Models;
 using System.Diagnostics;
 
 namespace ProjectAndTeamManagement.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
-
+        
         public IActionResult Index()
         {
             return View();

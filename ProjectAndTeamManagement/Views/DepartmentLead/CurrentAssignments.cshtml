@@ -8,30 +8,33 @@
 
 <div>
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Project</th>
-      <th scope="col">Team</th>      
-      <th scope="col">Start Date</th>
-      <th scope="col">End Date</th>
-    </tr>
-  </thead>
-  <tbody>        
-        @foreach(var employee in Model.Employees)
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Project</th>
+                <th scope="col">Team</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                @if (employee.RoleId != "1")
                 {
                     <tr>
-                        <td>@employee.EmployeeId</td>
+                        <td>@employee.Id</td>
                         <td>@employee.FirstName</td>
                         <td>@employee.LastName</td>
                         <td>@employee.Project?.Name</td>
                         <td>@employee.Team?.TeamName</td>
                         <td>@employee.Project?.StartDate</td>
                         <td>@employee.Project?.EndDate</td>
-                    </tr>                    
+                    </tr>
                 }
-   </tbody>
-</table>
+            }
+        </tbody>
+    </table>
 </div>

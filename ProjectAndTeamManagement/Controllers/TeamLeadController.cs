@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ProjectAndTeamManagement.Controllers
 {
+    [Authorize]
     public class TeamLeadController : Controller
     {
         public IActionResult AssignmentRequests()

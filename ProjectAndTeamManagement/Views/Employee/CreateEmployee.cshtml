@@ -1,19 +1,50 @@
-﻿
+﻿@using Domain.IdentityAuth.Models
 @{
     ViewData["Title"] = "Create Employee";
 }
 
-@model EmployeeVM
+@model Register
 
 
-<form method="post">
-  <div class="mb-3">
-    <label asp-for=FirstName class="form-label">First Name</label>
-    <input type="text" class="form-control" asp-for="FirstName" >
-  </div>
-  <div class="mb-3">
-    <label asp-for="LastName" class="form-label">Last Name</label>
-    <input type="text" class="form-control" asp-for="LastName">
-  </div>
-  <button type="submit" class="btn btn-primary" asp-controller="Employee" asp-action="CreateEmployee">Submit</button>
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Register</h1>
+
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.FirstName">First Name</label>
+                    <input type="text" asp-for="@Model.FirstName" class="form-control" />
+                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.LastName">Last Name</label>
+                    <input type="text" asp-for="@Model.LastName" class="form-control" />
+                    <span asp-validation-for="@Model.LastName" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Email">Email Address</label>
+                    <input type="text" asp-for="@Model.Email" class="form-control" />
+                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="@Model.Password">Password</label>
+                    <input type="password" asp-for="@Model.Password" class="form-control" />
+                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 form-label">Select Role</label>
+                    <div class="col-md-5">
+                        <select class="form-select" asp-for="RoleId" asp-items="@(new SelectList(Model.Roles, "Id", "Name"))"></select>
+                    </div>
+                    <input type="hidden" asp-for="RoleId" />
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary" asp-action="RegisterAccount" asp-controller="Account">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form method="post">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-12 col-lg-4">
+                <p>Are you sure you want to logout?</p>
+                <p>
+                    <button class="btn btn-primary" asp-action="LogoutAccount" asp-controller="Account" formmethod="post">Yes</button>
+                    <button class="btn btn-light m-lg-5 border-dark" asp-action="DontLogout" asp-controller="Account">No</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>

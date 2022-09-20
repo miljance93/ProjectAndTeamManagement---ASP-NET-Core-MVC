@@ -1,27 +1,35 @@
 ﻿using Domain;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Persistence;
 using Persistence.Repo.Interfaces;
 using ProjectAndTeamManagement.Models;
 using ProjectAndTeamManagement.Models.DepartmentLead;
 
 namespace ProjectAndTeamManagement.Controllers
 {
+    [Authorize]
     public class DepartmentLeadController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IProjectRepository _projectRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IProjectStatusRepository _projectStatusRepository;
+        private readonly ApplicationDbContext _context;
 
         public DepartmentLeadController(IEmployeeRepository employeeRepository, 
             IProjectRepository projectRepository, 
             ITeamRepository teamRepository,
-            IProjectStatusRepository projectStatusRepository)
+            IProjectStatusRepository projectStatusRepository,
+            ApplicationDbContext context)
         {
             _employeeRepository = employeeRepository;
             _projectRepository = projectRepository;
             _teamRepository = teamRepository;
             _projectStatusRepository = projectStatusRepository;
+            _context = context;
         }
         //GET
         public IActionResult ProjectManagement()
@@ -59,12 +67,17 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult CreateNewProject()
         {
-            var employees = _employeeRepository.GetAll;
+            var employees = _employeeRepository.GetAll.Where(x => x.RoleId == null || x.RoleId == "5");
             var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
+
+            RoleStore<IdentityRole> roleStore = new(_context);
+            var roles = roleStore.Roles.ToList();
+
             var employeesList = new CreateNewProject
             {
                 Employees = employees,
-                ProjectStatuses = projectStatuses
+                ProjectStatuses = projectStatuses,
+                Roles = roles
             };
 
             return View(employeesList);
@@ -127,7 +140,7 @@ namespace ProjectAndTeamManagement.Controllers
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
                     Path = model.Path,
-                    ProjectLeadId = model.EmployeeId,
+                    ProjectLeadId = model.EmployeeId.ToString(),
                     ProjectStatusId = model.ProjectStatusId,
                 };
 
