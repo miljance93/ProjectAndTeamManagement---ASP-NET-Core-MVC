@@ -62,7 +62,7 @@ namespace ProjectAndTeamManagement.Controllers
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    RoleId = model.RoleId.ToString()
+                   // RoleId = model.RoleId.ToString()
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);

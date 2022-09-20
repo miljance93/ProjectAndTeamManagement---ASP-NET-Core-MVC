@@ -67,7 +67,7 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult CreateNewProject()
         {
-            var employees = _employeeRepository.GetAll.Where(x => x.RoleId == null || x.RoleId == "5");
+            var employees = _employeeRepository.GetAll;
             var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
 
             RoleStore<IdentityRole> roleStore = new(_context);

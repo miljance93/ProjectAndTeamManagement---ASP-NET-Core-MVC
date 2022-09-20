@@ -20,8 +20,8 @@ namespace Domain.IdentityAuth
         [ForeignKey("TeamId")]
         public Team? Team { get; set; }
         public Project? Project { get; set; }
-        public string? RoleId { get; set; }
-        [ForeignKey("RoleId")]
-        public IdentityRole? Role { get; set; }
+        //public string? RoleId { get; set; }
+        //[ForeignKey("RoleId")]
+        //public IdentityRole? Role { get; set; }
     }
 }

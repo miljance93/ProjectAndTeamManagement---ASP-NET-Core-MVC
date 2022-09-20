@@ -44,7 +44,7 @@ namespace ProjectAndTeamManagement.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 TeamId = model.TeamId,
-                RoleId = model.RoleId
+                //RoleId = model.RoleId
             };
 
             _employeeRepository.CreateEmployee(employee);
