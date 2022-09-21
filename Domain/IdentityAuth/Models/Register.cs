@@ -18,7 +18,7 @@ namespace Domain.IdentityAuth.Models
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public int RoleId { get; set; }
+        public string RoleId { get; set; }
         public List<IdentityRole>? Roles { get; set; }
     }
 }

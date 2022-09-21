@@ -12,10 +12,11 @@ namespace ProjectAndTeamManagement.Models.DepartmentLead
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public string? Path { get; set; }
-        public int EmployeeId { get; set; }
+        public string? EmployeeId { get; set; }
         public IEnumerable<ApplicationUser>? Employees { get; set; }
         public int ProjectStatusId { get; set; }
         public IEnumerable<ProjectStatus>? ProjectStatuses { get; set; }
+        public int RoleId { get; set; }
         public IEnumerable<IdentityRole>? Roles { get; set; }
     }
 }

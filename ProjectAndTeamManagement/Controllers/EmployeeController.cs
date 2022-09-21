@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Persistence;
 using Persistence.Repo.Interfaces;
 using ProjectAndTeamManagement.Models;
+using ProjectAndTeamManagement.Models.DepartmentLead;
 
 namespace ProjectAndTeamManagement.Controllers
 {
@@ -15,14 +16,18 @@ namespace ProjectAndTeamManagement.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IProjectRepository _projectRepository;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public EmployeeController(IEmployeeRepository employeeRepository, ApplicationDbContext context)
+        public EmployeeController(IEmployeeRepository employeeRepository, IProjectRepository projectRepository, ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _employeeRepository = employeeRepository;
+            _projectRepository = projectRepository;
             _context = context;
+            _userManager = userManager;
         }
-
+        // GET
         public ViewResult CreateEmployee()
         {
             RoleStore<IdentityRole> roleStore = new RoleStore<IdentityRole>(_context);
@@ -36,6 +41,36 @@ namespace ProjectAndTeamManagement.Controllers
             return View(employee);
         }
 
+        // GET
+        public ViewResult AddEmployeeToProject(ApplicationUser user)
+        {
+            var allProjects = _projectRepository.GetAllProjects;
+            var employee = new AssignProject
+            {
+                Projects = allProjects,
+                UserId = user.Id
+            };
+
+            return View(employee);
+        }
+
+        public async Task<IActionResult> RemoveEmployeeFromProject(ApplicationUser user)
+        {
+            var employee = await _userManager.FindByIdAsync(user.Id);
+
+            if (employee != null)
+            {
+                employee.ProjectId = null;
+
+                await _userManager.UpdateAsync(employee);
+                return RedirectToAction("CurrentAssignments", "DepartmentLead");
+            }
+
+            return Problem();            
+        }
+
+
+        // POST
         [HttpPost]
         public IActionResult CreateEmployee(EmployeeVM model)
         {
@@ -44,12 +79,27 @@ namespace ProjectAndTeamManagement.Controllers
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 TeamId = model.TeamId,
-                //RoleId = model.RoleId
+                RoleId = model.RoleId,
             };
 
             _employeeRepository.CreateEmployee(employee);
 
             return RedirectToAction("Index", "Home");
+        }
+
+        //POST
+        [HttpPost]
+        public async Task<IActionResult> AssignToProject(AssignProject project)
+        {
+            var employee = await _userManager.FindByIdAsync(project.UserId);
+
+            if (employee == null) 
+                return Problem();
+
+            employee.ProjectId = project.ProjectId;
+            await _userManager.UpdateAsync(employee);
+
+            return RedirectToAction("CurrentAssignments", "DepartmentLead");
         }
     }
 }

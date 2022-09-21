@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
@@ -11,9 +12,10 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220921074114_AddRoleToAppUser")]
+    partial class AddRoleToAppUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -72,9 +74,6 @@ namespace Persistence.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("ProjectId")
-                        .HasColumnType("int");
-
                     b.Property<string>("RoleId")
                         .HasColumnType("nvarchar(450)");
 
@@ -100,8 +99,6 @@ namespace Persistence.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("ProjectId");
 
                     b.HasIndex("RoleId");
 
@@ -143,7 +140,9 @@ namespace Persistence.Migrations
 
                     b.HasKey("ProjectId");
 
-                    b.HasIndex("ProjectLeadId");
+                    b.HasIndex("ProjectLeadId")
+                        .IsUnique()
+                        .HasFilter("[ProjectLeadId] IS NOT NULL");
 
                     b.HasIndex("ProjectStatusId");
 
@@ -325,10 +324,6 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.IdentityAuth.ApplicationUser", b =>
                 {
-                    b.HasOne("Domain.Project", "Project")
-                        .WithMany()
-                        .HasForeignKey("ProjectId");
-
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Role")
                         .WithMany()
                         .HasForeignKey("RoleId");
@@ -336,8 +331,6 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Team", "Team")
                         .WithMany("ApplicationEmployees")
                         .HasForeignKey("TeamId");
-
-                    b.Navigation("Project");
 
                     b.Navigation("Role");
 
@@ -347,8 +340,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Project", b =>
                 {
                     b.HasOne("Domain.IdentityAuth.ApplicationUser", "ProjectLead")
-                        .WithMany()
-                        .HasForeignKey("ProjectLeadId");
+                        .WithOne("Project")
+                        .HasForeignKey("Domain.Project", "ProjectLeadId");
 
                     b.HasOne("Domain.ProjectStatus", "ProjectStatus")
                         .WithMany()
@@ -423,6 +416,11 @@ namespace Persistence.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.IdentityAuth.ApplicationUser", b =>
+                {
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("Domain.Team", b =>

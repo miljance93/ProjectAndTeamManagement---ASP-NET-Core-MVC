@@ -2,7 +2,7 @@
     ViewData["Title"] = "Team Management";
 }
 
-@model EmployeesListVM
+@model ListsVM
 
 <h2>Team Management</h2>
 
@@ -15,7 +15,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Email</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Team</th>
@@ -26,14 +26,14 @@
         <tbody>
             @foreach (var employee in Model.Employees)
             {
-                @*@if (employee.RoleId != "1")
-                {*@
+                @if (employee.RoleId != "1")
+                {
                     <tr>
-                        <td>@employee.Id</td>
+                        <td>@employee.Email</td>
                         <td>@employee.FirstName</td>
                         <td>@employee.LastName</td>
                         <td>@employee.Team?.TeamName</td>
-                        <td>Team Lead HC</td>
+                        <td>/</td>
                         <td>
                             @if (@employee.Team?.TeamName == "Unassigned")
                             {
@@ -45,7 +45,7 @@
                             }
                         </td>
                     </tr>
-                @*}*@
+                }
             }
 
         </tbody>

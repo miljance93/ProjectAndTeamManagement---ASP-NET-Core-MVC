@@ -19,9 +19,11 @@ namespace Domain.IdentityAuth
         public int? TeamId { get; set; }
         [ForeignKey("TeamId")]
         public Team? Team { get; set; }
+        public int? ProjectId { get; set; }
+        [ForeignKey("ProjectId")]
         public Project? Project { get; set; }
-        //public string? RoleId { get; set; }
-        //[ForeignKey("RoleId")]
-        //public IdentityRole? Role { get; set; }
+        public string? RoleId { get; set; }
+        [ForeignKey("RoleId")]
+        public IdentityRole? Role { get; set; }
     }
 }

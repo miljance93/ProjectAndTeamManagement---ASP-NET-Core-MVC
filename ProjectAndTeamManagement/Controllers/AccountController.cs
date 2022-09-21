@@ -9,11 +9,13 @@ namespace ProjectAndTeamManagement.Controllers
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager)
+        public AccountController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
         // GET
         public IActionResult Logout()
@@ -41,6 +43,7 @@ namespace ProjectAndTeamManagement.Controllers
                 var identityResult = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (identityResult.Succeeded)
                 {
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -62,12 +65,16 @@ namespace ProjectAndTeamManagement.Controllers
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                   // RoleId = model.RoleId.ToString()
+                    RoleId = model.RoleId, 
+                    TeamId = 1
                 };
+
+                var role = await _roleManager.FindByIdAsync(model.RoleId.ToString());
 
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, role.ToString());
                     return RedirectToAction("Index", "Home");
                 }
                 else

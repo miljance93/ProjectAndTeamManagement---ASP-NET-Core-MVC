@@ -1,5 +1,4 @@
-﻿using Domain;
-using Domain.IdentityAuth;
+﻿using Domain.IdentityAuth;
 using Persistence.Repo.Interfaces;
 
 namespace Persistence.Repo.Repositories
@@ -27,6 +26,25 @@ namespace Persistence.Repo.Repositories
             try
             {
                 _context.Users.Add(user);
+                _context.SaveChanges();
+
+                result = true;
+            }
+            catch (Exception)
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+        public bool UpdateEmployee(ApplicationUser user)
+        {
+            bool result;
+
+            try
+            {
+                _context.Users.Update(user);
                 _context.SaveChanges();
 
                 result = true;

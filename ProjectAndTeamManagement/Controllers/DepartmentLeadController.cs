@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.IdentityAuth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -18,18 +19,23 @@ namespace ProjectAndTeamManagement.Controllers
         private readonly ITeamRepository _teamRepository;
         private readonly IProjectStatusRepository _projectStatusRepository;
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
         public DepartmentLeadController(IEmployeeRepository employeeRepository, 
             IProjectRepository projectRepository, 
             ITeamRepository teamRepository,
             IProjectStatusRepository projectStatusRepository,
-            ApplicationDbContext context)
+            ApplicationDbContext context, UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             _employeeRepository = employeeRepository;
             _projectRepository = projectRepository;
             _teamRepository = teamRepository;
             _projectStatusRepository = projectStatusRepository;
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
         //GET
         public IActionResult ProjectManagement()
@@ -39,7 +45,7 @@ namespace ProjectAndTeamManagement.Controllers
             var employees = _employeeRepository.GetAll;
             var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
 
-            var project = new EmployeesListVM
+            var project = new ListsVM
             {
                 Projects = projects,
                 Employees = employees,
@@ -55,7 +61,7 @@ namespace ProjectAndTeamManagement.Controllers
             var teams = _teamRepository.GetAllTeams;
             var projects = _projectRepository.GetAllProjects;
 
-            var employeesList = new EmployeesListVM
+            var employeesList = new ListsVM
             {
                 Employees = allEmployees,
                 Teams = teams,
@@ -65,9 +71,9 @@ namespace ProjectAndTeamManagement.Controllers
             return View(employeesList);
         }
         //GET
-        public IActionResult CreateNewProject()
+        public async Task<IActionResult> CreateNewProject()
         {
-            var employees = _employeeRepository.GetAll;
+            var employees = _employeeRepository.GetAll.Where(x => x.RoleId == "5");
             var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
 
             RoleStore<IdentityRole> roleStore = new(_context);
@@ -89,7 +95,7 @@ namespace ProjectAndTeamManagement.Controllers
             var teams = _teamRepository.GetAllTeams;
             var employees = _employeeRepository.GetAll;
 
-            var employeeVM = new EmployeesListVM
+            var employeeVM = new ListsVM
             {
                 Teams = teams,
                 Employees = employees
@@ -101,7 +107,14 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult CreateNewTeam()
         {
-            return View();
+            var employees = _employeeRepository.GetAll;
+
+            var team = new CreateNewTeam
+            {
+                Employees = employees
+            };
+
+            return View(team);
         }
 
         //GET
@@ -111,7 +124,7 @@ namespace ProjectAndTeamManagement.Controllers
             var employees = _employeeRepository.GetAll;
             var teams = _teamRepository.GetAllTeams;
 
-            var currentAssignments = new EmployeesListVM
+            var currentAssignments = new ListsVM
             {
                 Projects = projects,
                 Employees = employees,
@@ -130,8 +143,8 @@ namespace ProjectAndTeamManagement.Controllers
 
         //POST
         [HttpPost]
-        public IActionResult CreateNewProject(CreateNewProject model)
-        {
+        public async Task<IActionResult> CreateNewProject(CreateNewProject model)
+        {  
             if (ModelState.IsValid)
             {
                var project = new Project
@@ -140,9 +153,14 @@ namespace ProjectAndTeamManagement.Controllers
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
                     Path = model.Path,
-                    ProjectLeadId = model.EmployeeId.ToString(),
+                    ProjectLeadId = model.EmployeeId,
                     ProjectStatusId = model.ProjectStatusId,
                 };
+               var user =  _employeeRepository.GetAll.FirstOrDefault(x => x.Id == model.EmployeeId);
+
+                user.RoleId = "4";
+                
+                _employeeRepository.UpdateEmployee(user);
 
                 _projectRepository.CreateNewProject(project);
 
