@@ -8,7 +8,7 @@
 
             <form method="post">
                 <div class="form-group">
-                    <label class="col-lg-4 form-label">Select Role</label>
+                    <label class="col-lg-4 form-label">Select Project</label>
                     <div class="col-md-10">
                         <select class="form-select" asp-for="ProjectId" asp-items="@(new SelectList(Model.Projects, "ProjectId", "Name"))"></select>
                     </div>

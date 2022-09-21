@@ -37,11 +37,11 @@
                         <td>
                             @if (@employee.Team?.TeamName == "Unassigned")
                             {
-                                <button type="button" class="btn btn-primary">Assign to team</button>
+                                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AssignEmployeeToTeam", "Employee", employee)'">Assign to team</button>
                             }
                             else
                             {
-                                <button type="button" class="btn btn-danger">Remove from team</button>
+                                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("RemoveEmployeeFromTeam", "Employee", employee)'">Remove from team</button>
                             }
                         </td>
                     </tr>
