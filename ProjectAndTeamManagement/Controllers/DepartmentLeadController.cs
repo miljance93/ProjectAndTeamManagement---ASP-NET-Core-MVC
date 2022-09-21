@@ -107,7 +107,7 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult CreateNewTeam()
         {
-            var employees = _employeeRepository.GetAll;
+            var employees = _employeeRepository.GetAll.Where(x => x.RoleId == "5");
 
             var team = new CreateNewTeam
             {
@@ -172,14 +172,20 @@ namespace ProjectAndTeamManagement.Controllers
 
         //POST
         [HttpPost]
-        public IActionResult CreateNewTeam(CreateNewTeam model)
+        public async Task<IActionResult> CreateNewTeam(CreateNewTeam model)
         {
+            var employee = await _userManager.FindByIdAsync(model.EmployeeId);
+
             if (ModelState.IsValid)
             {
                 var team = new Team
                 {
-                    TeamName = model.Name
+                    TeamName = model.Name,
+                    TeamLeadId = model.EmployeeId
                 };
+
+                employee.RoleId = "3";
+                await _userManager.UpdateAsync(employee);
 
                 _teamRepository.CreateNewTeam(team);
 

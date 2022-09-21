@@ -35,8 +35,8 @@
                     <span asp-validation-for="@Model.Password" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-2 form-label">Select Role</label>
-                    <div class="col-md-5">
+                    <label class="mb-3">Select Role</label>
+                    <div class="mb-3">
                         <select class="form-select" asp-for="RoleId" asp-items="@(new SelectList(Model.Roles, "Id", "Name"))"></select>
                     </div>
                     <input type="hidden" asp-for="RoleId" />
