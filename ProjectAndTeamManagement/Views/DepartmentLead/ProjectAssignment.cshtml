@@ -37,7 +37,7 @@
                         <td>@employee.LastName</td>
                         <td>@employee.Project?.Name</td>
                         <td>@employee.Team?.TeamName</td>
-                        @*<td>@employee.Project?.ProjectLead?.FullName</td>*@
+                        <td>@Model.Employees.FirstOrDefault(x => x.Id == employee.Team?.TeamLeadId)</td>
                         <td>
                             @if (@employee.Project?.Name == null)
                             {

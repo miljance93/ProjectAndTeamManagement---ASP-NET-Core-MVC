@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Repo.Interfaces;
 using ProjectAndTeamManagement.Models;
+using ProjectAndTeamManagement.Models.TeamLead;
 
 namespace ProjectAndTeamManagement.Controllers
 {
@@ -35,6 +36,20 @@ namespace ProjectAndTeamManagement.Controllers
             };
 
             return View(list);
+        }
+
+        public ViewResult CreateNewRequest()
+        {
+            var projects = _projectRepository.GetAllProjects;
+            var employees = _employeeRepository.GetAll;
+
+            var request = new EmployeeRequest
+            {
+                Projects = projects,
+                Employees = employees
+            };
+
+            return View(request);
         }
     }
 }

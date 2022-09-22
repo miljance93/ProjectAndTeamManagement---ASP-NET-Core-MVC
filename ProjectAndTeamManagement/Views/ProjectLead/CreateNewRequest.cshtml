@@ -1,0 +1,47 @@
+﻿@using ProjectAndTeamManagement.Models.TeamLead
+@model EmployeeRequest
+
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Create New Request</h1>
+            <form asp-action="CreateNewProject" asp-controller="DepartmentLead" method="post" role="form">
+                <div class="mb-3">
+                    <label class="mb-3">Request To</label>
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="EmployeeId" asp-items="@(new SelectList(Model.Employees, "Id", "FullName"))"></select>
+                    </div>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label class="mb-3">Request For</label>
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="EmployeeId" asp-items="@(new SelectList(Model.Employees, "Id", "FullName"))"></select>
+                    </div>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label class="mb-3">For Project</label>
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="ProjectId" asp-items="@(new SelectList(Model.Projects, "ProjectId", "Name"))"></select>
+                    </div>
+                </div>
+                <br/>
+                <div class="mb-3">
+                    <label asp-for="StartDate">Start Date</label>
+                    <input asp-for="StartDate" type="datetime" value="2022-01-01T00:00" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label asp-for="EndDate">End Date</label>
+                    <input asp-for="EndDate" type="datetime" value="2022-01-01T00:00" />
+                    <span asp-validation-for="EndDate" class="mb-3"></span>
+                </div>
+                <br />
+                
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

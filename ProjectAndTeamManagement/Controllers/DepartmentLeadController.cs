@@ -95,7 +95,6 @@ namespace ProjectAndTeamManagement.Controllers
         {
             var teams = _teamRepository.GetAllTeams;
             var employees = _employeeRepository.GetAll;
-            var teamLead = _employeeRepository.GetAll.Where(x => x.RoleId == "3");
 
             var employeeVM = new ListsVM
             {
