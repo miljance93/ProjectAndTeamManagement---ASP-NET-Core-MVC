@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.IdentityAuth;
 using Persistence.Repo.Interfaces;
 
 namespace Persistence.Repo.Repositories
@@ -32,5 +33,6 @@ namespace Persistence.Repo.Repositories
 
             return result;
         }
+
     }
 }

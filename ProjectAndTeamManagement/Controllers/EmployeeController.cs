@@ -1,5 +1,4 @@
-﻿using Domain;
-using Domain.IdentityAuth;
+﻿using Domain.IdentityAuth;
 using Domain.IdentityAuth.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

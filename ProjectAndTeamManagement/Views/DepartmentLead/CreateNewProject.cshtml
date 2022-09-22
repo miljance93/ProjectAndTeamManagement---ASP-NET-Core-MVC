@@ -2,45 +2,52 @@
 @model CreateNewProject
 
 
-<form asp-action="CreateNewProject" asp-controller="DepartmentLead" method="post" role="form">
-    <div class="form-group">
-        <label asp-for="Name" class="form-label">Project Name</label>
-        <input asp-for="Name" type="text" class="form-control" placeholder="Project name" />
-        <span asp-validation-for="Name" class="text-danger"></span>
-    </div>
-    <br />
-    <div class="form-group">
-        <label asp-for="StartDate">Start Date</label>
-        <input asp-for="StartDate" type="datetime" value="2022-01-01T00:00" />
-        <span asp-validation-for="StartDate" class="text-danger"></span>
-    </div>
-    <br />
-    <div class="form-group">
-        <label asp-for="EndDate">End Date</label>
-        <input asp-for="EndDate" type="datetime" value="2022-01-01T00:00" />
-        <span asp-validation-for="EndDate" class="text-danger"></span>
-    </div>
+<div class="container mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Create New Project</h1>
+            <form asp-action="CreateNewProject" asp-controller="DepartmentLead" method="post" role="form">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label">Project Name</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Project name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label asp-for="StartDate">Start Date</label>
+                    <input asp-for="StartDate" type="datetime" value="2022-01-01T00:00" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label asp-for="EndDate">End Date</label>
+                    <input asp-for="EndDate" type="datetime" value="2022-01-01T00:00" />
+                    <span asp-validation-for="EndDate" class="mb-3"></span>
+                </div>
 
-    <br />
-    <div class="form-group">
-        <label asp-for="Path" class="form-label">Path</label>
-        <input asp-for="Path" type="text" class="form-control" placeholder="Path" />
-        <span asp-validation-for="Path" class="text-danger"></span>
-    </div>
-    <br />
-    <div class="mb-3">
-        <label class="col-md-2 control-label">Select Project Status</label>
-        <div class="col-md-5">
-            <select class="form-select" asp-for="ProjectStatusId" asp-items="@(new SelectList(Model.ProjectStatuses, "ProjectStatusId", "ProjectStatusName"))"></select>
+                <br />
+                <div class="mb-3">
+                    <label asp-for="Path" class="form-label">Path</label>
+                    <input asp-for="Path" type="text" class="form-control" placeholder="Path" />
+                    <span asp-validation-for="Path" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label class="mb-3">Select Project Status</label>
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="ProjectStatusId" asp-items="@(new SelectList(Model.ProjectStatuses, "ProjectStatusId", "ProjectStatusName"))"></select>
+                    </div>
+                </div>
+                <br />
+                <div class="mb-3">
+                    <label class="mb-3">Select Project Lead</label>
+                    <div class="mb-3">
+                        <select class="form-select" asp-for="EmployeeId" asp-items="@(new SelectList(Model.Employees, "Id", "FullName"))"></select>
+                    </div>
+                </div>
+                <br />
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </div>
     </div>
-    <br />
-    <div class="form-group">
-        <label class="col-md-2 control-label">Select Project Lead</label>
-        <div class="col-md-5">
-            <select class="form-select" asp-for="EmployeeId" asp-items="@(new SelectList(Model.Employees, "Id", "FullName"))"></select>
-        </div>
-    </div>
-    <br />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>

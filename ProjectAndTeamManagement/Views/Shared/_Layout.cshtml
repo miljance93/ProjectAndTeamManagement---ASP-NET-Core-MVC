@@ -95,7 +95,7 @@
                                     <a class="nav-link text-dark" asp-controller="ProjectLead" asp-action="AssignmentRequests">Assignment Requests</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="ProjectLead" asp-action="CurrentAssignments">Current Assignment</a>
+                                    <a class="nav-link text-dark" asp-controller="ProjectLead" asp-action="CurrentAssignments" asp-route-user="@User.Identity.Name">Current Assignment</a>
                                 </li>
                             </ul>
                         }

@@ -20,6 +20,6 @@ namespace Domain
         public ProjectStatus? ProjectStatus { get; set; }
         public string? ProjectLeadId { get; set; }
         [ForeignKey("ProjectLeadId")]
-        public ApplicationUser? ProjectLead { get; set; }
+        public List<ApplicationUser>? Employees { get; set; }
     }
 }

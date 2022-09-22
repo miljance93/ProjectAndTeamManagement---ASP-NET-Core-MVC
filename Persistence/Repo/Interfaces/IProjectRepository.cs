@@ -1,4 +1,5 @@
 ﻿using Domain;
+using Domain.IdentityAuth;
 
 namespace Persistence.Repo.Interfaces
 {

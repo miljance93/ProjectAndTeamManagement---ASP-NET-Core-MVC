@@ -1,21 +1,35 @@
-﻿<h2>Current Assignments</h2>
+﻿@model ListsVM
+
+<h2>Current Assignments</h2>
 
 <div>
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Project</th>
-      <th scope="col">Team</th>
-      <th scope="col">Team Lead</th>
-      <th scope="col">Start Date</th>
-      <th scope="col">End Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Project</th>
+                <th scope="col">Team</th>
+                <th scope="col">Team Lead</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.Email</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Project?.Name</td>
+                    <td>@employee.Team?.TeamName</td>
+                    <td>@employee.Team?.TeamLeadId</td>
+                    <td>@employee.Project?.StartDate</td>
+                    <td>@employee.Project?.EndDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
