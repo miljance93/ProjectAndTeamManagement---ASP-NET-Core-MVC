@@ -166,6 +166,64 @@ namespace Persistence.Migrations
                     b.ToTable("ProjectStatuses");
                 });
 
+            modelBuilder.Entity("Domain.Request", b =>
+                {
+                    b.Property<int>("RequestId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestId"), 1L, 1);
+
+                    b.Property<string>("DepartmentLeadId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmployeeId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProjectLeadId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("RequestStatusId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("RequestId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.HasIndex("RequestStatusId");
+
+                    b.ToTable("Requests");
+                });
+
+            modelBuilder.Entity("Domain.RequestStatus", b =>
+                {
+                    b.Property<int>("RequestStatusId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RequestStatusId"), 1L, 1);
+
+                    b.Property<string>("StatusName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RequestStatusId");
+
+                    b.ToTable("RequestStatuses");
+                });
+
             modelBuilder.Entity("Domain.Team", b =>
                 {
                     b.Property<int>("TeamId")
@@ -358,6 +416,31 @@ namespace Persistence.Migrations
                     b.Navigation("ProjectStatus");
 
                     b.Navigation("Team");
+                });
+
+            modelBuilder.Entity("Domain.Request", b =>
+                {
+                    b.HasOne("Domain.IdentityAuth.ApplicationUser", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Project", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.RequestStatus", "RequestStatus")
+                        .WithMany()
+                        .HasForeignKey("RequestStatusId");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Project");
+
+                    b.Navigation("RequestStatus");
                 });
 
             modelBuilder.Entity("Domain.Team", b =>

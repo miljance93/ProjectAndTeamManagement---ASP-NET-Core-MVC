@@ -1,9 +1,13 @@
-﻿<h2>Assignment Requests</h2>
+﻿@using ProjectAndTeamManagement.Models.ProjectLead
+
+@model AssignmentsList
+
+<h2>Assignment Requests</h2>
 
 <div>
 
     <div>
-        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("CreateNewRequest", "ProjectLead")'">Create New</button>
+        <button type="button" class="btn btn-primary"><a class="nav-link" asp-controller="ProjectLead" asp-action="CreateNewRequest" asp-route-user="@User.Identity?.Name">Create New</a></button>
     </div>
 
     <table class="table table-striped">
@@ -12,7 +16,6 @@
                 <th scope="col">#</th>
                 <th scope="col">Addressed To</th>
                 <th scope="col">Requested For</th>
-                <th scope="col">From Project</th>
                 <th scope="col">To Project</th>
                 <th scope="col">Start Date</th>
                 <th scope="col">End Date</th>
@@ -20,6 +23,18 @@
             </tr>
         </thead>
         <tbody>
+            @foreach(var request in Model.Requests)
+            {
+                <tr>
+                    <td>@request.RequestId</td>
+                    <td>@Model.Employees.FirstOrDefault(x => x.Id == request.DepartmentLeadId)?.FullName</td>
+                    <td>@request.Employee.FullName</td>
+                    <td>@request.Project.Name</td>
+                    <td>@request.StartDate</td>
+                    <td>@request.EndDate</td>
+                    <td>@request.RequestStatus?.StatusName</td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>

@@ -13,7 +13,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
+builder.Services.AddScoped<IRequestRepository, RequestRepository>();
 builder.Services.AddScoped<IProjectStatusRepository, ProjectStatusRepository>();
+builder.Services.AddScoped<IRequestStatusRepository, RequestStatusRepository>();    
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

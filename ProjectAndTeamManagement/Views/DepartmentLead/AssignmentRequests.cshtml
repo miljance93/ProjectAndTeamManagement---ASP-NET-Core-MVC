@@ -1,31 +1,52 @@
-﻿
+﻿@using ProjectAndTeamManagement.Models.DepartmentLead
+
+@model RequestModel
+
 @{
     ViewData["Title"] = "Assignment Requests";
 }
+
+
 
 <h2>Assignment Requests</h2>
 
 <div>
 
-    <div>
-        <button type="button" class="btn btn-primary">Create New</button>
-    </div>
-
     <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Requested From</th>
-      <th scope="col">Requested For</th>
-      <th scope="col">From Project</th>
-      <th scope="col">To Project</th>
-      <th scope="col">Start Date</th>
-      <th scope="col">End Date</th>
-      <th scope="col">Status</th>
-      <th scope="col">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Requested From</th>
+                <th scope="col">Request For</th>
+                <th scope="col">For Project</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model.Requests)
+            {
+                <tr>
+                    <td></td>
+                    <td>@Model.Employees.FirstOrDefault(x => x.Id == request.ProjectLeadId)?.FullName</td>
+                    <td>@request.Employee.FullName</td>
+                    <td>@request.Project.Name</td>
+                    <td>@request.StartDate</td>
+                    <td>@request.EndDate</td>
+                    <td>@request.RequestStatus?.StatusName</td>
+                    <td>
+                        @if (request.RequestStatusId == 1)
+                        {
+                            <button class="btn btn-primary" onclick="location.href='@Url.Action("ApproveRequest", "DepartmentLead", @request)'">Approve</button>
+                            <button class="btn btn-secondary" onclick="location.href='@Url.Action("DeclineRequest", "DepartmentLead", @request)'">Decline</button>
+                        }else{
+                            <p>No Action</p>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

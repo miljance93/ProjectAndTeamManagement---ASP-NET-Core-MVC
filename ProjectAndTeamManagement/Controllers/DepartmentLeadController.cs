@@ -18,14 +18,18 @@ namespace ProjectAndTeamManagement.Controllers
         private readonly IProjectRepository _projectRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IProjectStatusRepository _projectStatusRepository;
+        private readonly IRequestRepository _requestRepository;
+        private readonly IRequestStatusRepository _requestStatusRepository;
         private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public DepartmentLeadController(IEmployeeRepository employeeRepository, 
-            IProjectRepository projectRepository, 
+        public DepartmentLeadController(IEmployeeRepository employeeRepository,
+            IProjectRepository projectRepository,
             ITeamRepository teamRepository,
             IProjectStatusRepository projectStatusRepository,
+            IRequestRepository requestRepository,
+            IRequestStatusRepository requestStatusRepository,
             ApplicationDbContext context,
             UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
@@ -34,6 +38,8 @@ namespace ProjectAndTeamManagement.Controllers
             _projectRepository = projectRepository;
             _teamRepository = teamRepository;
             _projectStatusRepository = projectStatusRepository;
+            _requestRepository = requestRepository;
+            _requestStatusRepository = requestStatusRepository;
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
@@ -68,7 +74,7 @@ namespace ProjectAndTeamManagement.Controllers
                 Teams = teams,
                 Projects = projects
             };
-            
+
             return View(employeesList);
         }
         //GET
@@ -100,7 +106,7 @@ namespace ProjectAndTeamManagement.Controllers
             {
                 Teams = teams,
                 Employees = employees,
-                
+
             };
 
             return View(employeeVM);
@@ -139,7 +145,20 @@ namespace ProjectAndTeamManagement.Controllers
         //GET 
         public IActionResult AssignmentRequests()
         {
-            return View();
+            var requests = _requestRepository.GetAllRequests;
+            var statuses = _requestStatusRepository.GetAllRequestStatuses;
+            var employees = _employeeRepository.GetAll;
+            var projects = _projectRepository.GetAllProjects;
+
+            var request = new RequestModel
+            {
+                Requests = requests,
+                RequestStatuses = statuses,
+                Employees = employees,
+                Projects = projects
+            };
+
+            return View(request);
         }
 
 
@@ -149,7 +168,7 @@ namespace ProjectAndTeamManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-               var project = new Project
+                var project = new Project
                 {
                     Name = model.Name,
                     StartDate = model.StartDate,
@@ -170,7 +189,7 @@ namespace ProjectAndTeamManagement.Controllers
 
             return Problem("Project not created!");
         }
-        
+
 
         //POST
         [HttpPost]
@@ -185,7 +204,7 @@ namespace ProjectAndTeamManagement.Controllers
                 };
                 var role = await _roleManager.FindByIdAsync("3");
 
-                await UpdateUser(model.EmployeeId, role); 
+                await UpdateUser(model.EmployeeId, role);
 
                 _teamRepository.CreateNewTeam(team);
 
@@ -195,17 +214,57 @@ namespace ProjectAndTeamManagement.Controllers
             return Problem("Team not created!");
         }
 
-        public async Task<bool> UpdateUser(string employeeId, IdentityRole role)
+        private async Task<bool> UpdateUser(string employeeId, IdentityRole role)
         {
             var user = _employeeRepository.GetAll.FirstOrDefault(x => x.Id == employeeId);
 
-           await _userManager.AddToRoleAsync(user, role.Name);
+            await _userManager.AddToRoleAsync(user, role.Name);
 
             user.RoleId = role.Id;
 
             await _userManager.UpdateAsync(user);
 
             return _employeeRepository.UpdateEmployee(user);
+        }
+
+        //POST
+        public IActionResult ApproveRequest(RequestModel requestModel)
+        {
+            if (requestModel != null)
+            {
+                var request = _requestRepository.GetAllRequests.FirstOrDefault(x => x.RequestId == requestModel.RequestId);
+
+                request.RequestStatusId = 2;
+
+                var employee = _employeeRepository.GetAll.FirstOrDefault(x => x.Id == requestModel.EmployeeId);
+
+                employee.ProjectId = requestModel.ProjectId;
+
+                _requestRepository.UpdateRequest(request);
+                _employeeRepository.UpdateEmployee(employee);
+
+                return RedirectToAction("AssignmentRequests");
+            }
+            
+
+            return Problem();
+        }
+
+        //POST
+        public IActionResult DeclineRequest(RequestModel requestModel)
+        {
+            if (requestModel != null)
+            {
+                var request = _requestRepository.GetAllRequests.FirstOrDefault(x => x.RequestId == requestModel.RequestId);
+
+                request.RequestStatusId = 3;
+
+                _requestRepository.UpdateRequest(request);
+
+                return RedirectToAction("AssignmentRequests");
+            }
+
+            return Problem();
         }
     }
 }

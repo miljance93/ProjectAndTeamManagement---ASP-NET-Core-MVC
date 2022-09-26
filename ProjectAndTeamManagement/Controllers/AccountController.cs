@@ -43,7 +43,7 @@ namespace ProjectAndTeamManagement.Controllers
                 var identityResult = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (identityResult.Succeeded)
                 {
-                    
+
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -65,7 +65,7 @@ namespace ProjectAndTeamManagement.Controllers
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    RoleId = model.RoleId, 
+                    RoleId = model.RoleId,
                     TeamId = 1
                 };
 

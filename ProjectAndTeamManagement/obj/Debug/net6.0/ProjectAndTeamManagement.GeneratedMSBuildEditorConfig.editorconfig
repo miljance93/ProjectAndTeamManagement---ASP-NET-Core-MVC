@@ -91,10 +91,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvZ291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFJlZ2lzdGVyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -107,8 +103,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcQ3VycmVudEFzc2lnbm1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Team/CreateTeam.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbVxDcmVhdGVUZWFtLmNzaHRtbA==
+[C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/ProjectAssignment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcUHJvamVjdEFzc2lnbm1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewImports.cshtml]
