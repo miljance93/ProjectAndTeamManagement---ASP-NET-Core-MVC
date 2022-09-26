@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Domain.IdentityAuth;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Repo.Interfaces;
 using ProjectAndTeamManagement.Models.DepartmentLead;
@@ -12,21 +14,25 @@ namespace ProjectAndTeamManagement.Controllers
         private readonly IRequestStatusRepository _requestStatusRepository;
         private readonly IEmployeeRepository _employeeRepository;
         private readonly IProjectRepository _projectRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
         public TeamLeadController(IRequestRepository requestRepository, 
             IRequestStatusRepository requestStatusRepository,
             IEmployeeRepository employeeRepository,
-            IProjectRepository projectRepository
+            IProjectRepository projectRepository,
+            UserManager<ApplicationUser> userManager
             )
         {
             _requestRepository = requestRepository;
             _requestStatusRepository = requestStatusRepository;
             _employeeRepository = employeeRepository;
             _projectRepository = projectRepository;
+            _userManager = userManager;
         }
-        public IActionResult AssignmentRequests()
+        public async Task<IActionResult> AssignmentRequests(string user)
         {
-            var requests = _requestRepository.GetAllRequests;
+            var teamLead = await _userManager.FindByNameAsync(user);
+            var requests = _requestRepository.GetAllRequests.Where(x => x.TeamLeadId == teamLead.Id);
             var statuses = _requestStatusRepository.GetAllRequestStatuses;
             var employees = _employeeRepository.GetAll;
             var projects = _projectRepository.GetAllProjects;

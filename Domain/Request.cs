@@ -10,6 +10,7 @@ namespace Domain
         public int RequestId { get; set; }
         public string? DepartmentLeadId { get; set; }
         public string? ProjectLeadId { get; set; }
+        public string? TeamLeadId { get; set; }
         public string EmployeeId { get; set; }
         [ForeignKey("EmployeeId")]
         public ApplicationUser Employee { get; set; }

@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Persistence.Repo.Interfaces;
-using ProjectAndTeamManagement.Models;
 using ProjectAndTeamManagement.Models.ProjectLead;
 using ProjectAndTeamManagement.Models.TeamLead;
 
