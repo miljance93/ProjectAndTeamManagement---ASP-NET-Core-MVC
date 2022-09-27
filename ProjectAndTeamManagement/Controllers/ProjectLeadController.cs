@@ -36,7 +36,7 @@ namespace ProjectAndTeamManagement.Controllers
 
 
         // GET
-        public async Task<ViewResult> AssignmentRequests(string user)
+        public async Task<ViewResult> AssignmentRequests(string? user)
         {
             var projectLead = await _userManager.FindByNameAsync(user);
             var requests = _requestRepository.GetAllRequests.Where(x => x.ProjectLeadId == projectLead.Id);
@@ -60,14 +60,12 @@ namespace ProjectAndTeamManagement.Controllers
             var projectLead = await _userManager.FindByNameAsync(user);
             var project = _projectRepository.GetAllProjects.FirstOrDefault(x => x.ProjectLeadId == projectLead.Id);
             var employees = _employeeRepository.GetAll.Where(x => x.ProjectId == project?.ProjectId);
-            var teams = _teamRepository.GetAllTeams;
 
             var list = new AssignmentsList
             {
                Employees = employees,
                Project = project,
                ProjectLead = projectLead,
-               Teams = teams,
             };
 
             return View(list);
@@ -112,7 +110,7 @@ namespace ProjectAndTeamManagement.Controllers
 
                 _requestRepository.CreateNewRequest(requestForEmployee);
 
-                return RedirectToAction("AssignmentRequests");
+                return RedirectToAction("Index", "Home");
             }
 
             return Problem();

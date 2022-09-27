@@ -81,10 +81,10 @@
                                     <a class="nav-link text-dark" asp-controller="TeamLead" asp-action="AssignmentRequests" asp-route-user="@User.Identity.Name">Assignment Requests</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="TeamLead" asp-action="ProjectAssignment">Project Assignment</a>
+                                    <a class="nav-link text-dark" asp-controller="TeamLead" asp-action="ProjectAssignment" asp-route-user="@User.Identity.Name">Project Assignment</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="TeamLead" asp-action="CurrentAssignment">Current Assignment</a>
+                                    <a class="nav-link text-dark" asp-controller="TeamLead" asp-action="CurrentAssignment" asp-route-user="@User.Identity.Name">Current Assignment</a>
                                 </li>
                             </ul>
                         }

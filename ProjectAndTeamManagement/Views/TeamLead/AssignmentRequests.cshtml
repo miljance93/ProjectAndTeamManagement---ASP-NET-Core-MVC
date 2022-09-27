@@ -10,7 +10,7 @@
         <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Request To</th>
+                <th scope="col">Request From</th>
                 <th scope="col">Request For</th>
                 <th scope="col">For Project</th>
                 <th scope="col">Start Date</th>
@@ -24,7 +24,7 @@
             {
                 <tr>
                     <td></td>
-                    <td>@Model.Employees.FirstOrDefault(x => x.Id == request.DepartmentLeadId)?.FullName</td>
+                    <td>@Model.Employees.FirstOrDefault(x => x.Id == request.ProjectLeadId)?.FullName</td>
                     <td>@request.Employee.FullName</td>
                     <td>@request.Project.Name</td>
                     <td>@request.StartDate</td>

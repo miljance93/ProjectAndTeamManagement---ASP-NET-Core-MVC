@@ -5,6 +5,7 @@ namespace ProjectAndTeamManagement.Models.ProjectLead
 {
     public class AssignmentsList
     {
+        public ApplicationUser TeamLead { get; set; }
         public ApplicationUser ProjectLead { get; set; }
         public Project Project { get; set; }
         public IEnumerable<ApplicationUser> Employees { get; set; }

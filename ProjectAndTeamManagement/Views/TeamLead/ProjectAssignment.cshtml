@@ -1,4 +1,8 @@
-﻿<div>
+﻿@model ListsVM
+
+<h2>Project Assignments</h2>
+
+<div>
 
     <table class="table table-striped">
         <thead>
@@ -6,12 +10,35 @@
                 <th scope="col">Email</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
+                <th scope="col">Project</th>
                 <th scope="col">Team</th>
                 <th scope="col">Team Lead</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
+
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@employee.Email</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Project?.Name</td>
+                    <td>@employee.Team?.TeamName</td>
+                    <td>@Model.Employees.FirstOrDefault(x => x.Id == employee.Team?.TeamLeadId).FullName</td>
+                    <td>
+                        @if (@employee.Project?.Name == null)
+                        {
+                            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddEmployeeToProject", "Employee", employee)'">Add to project</button>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("RemoveEmployeeFromProject", "Employee", employee)'">Remove from project</button>
+                        }
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
 </div>
