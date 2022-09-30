@@ -39,7 +39,6 @@
                     <div class="mb-3">
                         <select class="form-select" asp-for="RoleId" asp-items="@(new SelectList(Model.Roles, "Id", "Name"))"></select>
                     </div>
-                    <input type="hidden" asp-for="RoleId" />
                 </div>
                 <div class="mb-3">
                     <button type="submit" class="btn btn-primary" asp-action="RegisterAccount" asp-controller="Account">Register</button>

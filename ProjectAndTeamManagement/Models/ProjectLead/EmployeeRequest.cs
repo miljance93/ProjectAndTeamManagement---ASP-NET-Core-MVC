@@ -5,8 +5,7 @@ namespace ProjectAndTeamManagement.Models.TeamLead
 {
     public class EmployeeRequest
     {
-        public string DepartmentLeadId { get; set; }
-        public string? ProjectLeadId { get; set; }
+        public string LeadId { get; set; }
         public string EmployeeId { get; set; }
         public IEnumerable<ApplicationUser>? Employees { get; set; }
         public int ProjectId { get; set; }

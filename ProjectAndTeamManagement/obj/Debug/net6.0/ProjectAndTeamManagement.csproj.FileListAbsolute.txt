@@ -277,3 +277,5 @@ C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManageme
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\obj\Debug\net6.0\ProjectAndTeamManagement.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\bin\Debug\net6.0\Application.dll
+C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\bin\Debug\net6.0\Application.pdb

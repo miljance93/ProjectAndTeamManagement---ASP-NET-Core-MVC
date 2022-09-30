@@ -1,3 +1,5 @@
+using Application.Services;
+using Application.Services.Interfaces;
 using Domain.IdentityAuth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +17,8 @@ builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IRequestRepository, RequestRepository>();
 builder.Services.AddScoped<IProjectStatusRepository, ProjectStatusRepository>();
-builder.Services.AddScoped<IRequestStatusRepository, RequestStatusRepository>();    
+builder.Services.AddScoped<IRequestStatusRepository, RequestStatusRepository>();
+builder.Services.AddScoped<IProjectLeadService, ProjectLeadService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {

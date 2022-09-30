@@ -9,7 +9,7 @@
                 <div class="mb-3">
                     <label class="mb-3">Request To</label>
                     <div class="mb-3">
-                        <select class="form-select" asp-for="DepartmentLeadId" asp-items="@(new SelectList(Model.Employees.Where(x => x.RoleId == "2" || x.RoleId == "3"), "Id", "FullName"))"></select>
+                        <select class="form-select" asp-for="LeadId" asp-items="@(new SelectList(Model.Employees.Where(x => x.RoleId == "2" || x.RoleId == "3"), "Id", "FullName"))"></select>
                     </div>
                 </div>
                 <br />
@@ -38,11 +38,7 @@
                     <input asp-for="EndDate" type="datetime" value="2022-01-01T00:00" />
                     <span asp-validation-for="EndDate" class="mb-3"></span>
                 </div>
-                <br />
-                <div>
-                    <input type="hidden" asp-for="ProjectLeadId" />
-                </div>
-                
+                <br />                
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>

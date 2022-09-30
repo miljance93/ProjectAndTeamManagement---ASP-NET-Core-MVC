@@ -107,6 +107,11 @@ namespace ProjectAndTeamManagement.Controllers
         [HttpPost]
         public IActionResult CreateEmployee(EmployeeVM model)
         {
+            if (!ModelState.IsValid)
+            {
+                return Problem();
+            }
+
             var employee = new ApplicationUser
             {
                 FirstName = model.FirstName,

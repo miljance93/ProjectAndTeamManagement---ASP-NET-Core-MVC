@@ -86,7 +86,7 @@ namespace ProjectAndTeamManagement.Controllers
                 }
             }
 
-            return Redirect("Register");
+            return RedirectToAction("Error", "Home");
         }
 
         // POST

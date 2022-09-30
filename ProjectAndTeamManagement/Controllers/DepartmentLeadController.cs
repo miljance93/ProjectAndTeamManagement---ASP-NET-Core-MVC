@@ -48,16 +48,12 @@ namespace ProjectAndTeamManagement.Controllers
         public IActionResult ProjectManagement()
         {
             var projects = _projectRepository.GetAllProjects;
-            var teams = _teamRepository.GetAllTeams;
             var employees = _employeeRepository.GetAll;
-            var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
 
             var project = new ListsVM
             {
                 Projects = projects,
                 Employees = employees,
-                Teams = teams,
-                ProjectStatuses = projectStatuses
             };
             return View(project);
         }
@@ -115,7 +111,7 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult CreateNewTeam()
         {
-            var employees = _employeeRepository.GetAll.Where(x => x.RoleId == "5");
+            var employees = _employeeRepository.GetAll.Where(x => x.RoleId != "1" && x.RoleId != "2");
 
             var team = new CreateNewTeam
             {
@@ -187,7 +183,7 @@ namespace ProjectAndTeamManagement.Controllers
                 return RedirectToAction("ProjectManagement");
             }
 
-            return Problem("Project not created!");
+            return RedirectToAction("Error", "Home");
         }
 
 
@@ -202,25 +198,28 @@ namespace ProjectAndTeamManagement.Controllers
                     TeamName = model.Name,
                     TeamLeadId = model.EmployeeId
                 };
+
+                _teamRepository.CreateNewTeam(team);                
+
                 var role = await _roleManager.FindByIdAsync("3");
 
-                await UpdateUser(model.EmployeeId, role);
-
-                _teamRepository.CreateNewTeam(team);
+                await UpdateUser(model.EmployeeId, role);                
 
                 return RedirectToAction("CurrentAssignments");
             }
 
-            return Problem("Team not created!");
+            return RedirectToAction("Error", "Home");
         }
 
         private async Task<bool> UpdateUser(string employeeId, IdentityRole role)
         {
             var user = _employeeRepository.GetAll.FirstOrDefault(x => x.Id == employeeId);
+            var teamId = _teamRepository.GetAllTeams.FirstOrDefault(x => x.TeamLeadId == employeeId)?.TeamId;
 
             await _userManager.AddToRoleAsync(user, role.Name);
 
             user.RoleId = role.Id;
+            user.TeamId = teamId;
 
             await _userManager.UpdateAsync(user);
 

@@ -1,4 +1,6 @@
-﻿using Domain;
+﻿using Application.Models;
+using Application.Services.Interfaces;
+using Domain;
 using Domain.IdentityAuth;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -17,6 +19,7 @@ namespace ProjectAndTeamManagement.Controllers
         private readonly IProjectRepository _projectRepository;
         private readonly ITeamRepository _teamRepository;
         private readonly IRequestStatusRepository _requestStatusRepository;
+        private readonly IProjectLeadService projectLeadService;
         private readonly UserManager<ApplicationUser> _userManager;
 
         public ProjectLeadController(IEmployeeRepository employeeRepository, 
@@ -24,6 +27,7 @@ namespace ProjectAndTeamManagement.Controllers
             IProjectRepository projectRepository,
             ITeamRepository teamRepository,
             IRequestStatusRepository requestStatusRepository,
+            IProjectLeadService projectLeadService,
             UserManager<ApplicationUser> userManager)
         {
             _employeeRepository = employeeRepository;
@@ -31,6 +35,7 @@ namespace ProjectAndTeamManagement.Controllers
             _projectRepository = projectRepository;
             _teamRepository = teamRepository;
             _requestStatusRepository = requestStatusRepository;
+            this.projectLeadService = projectLeadService;
             _userManager = userManager;
         }
 
@@ -91,29 +96,33 @@ namespace ProjectAndTeamManagement.Controllers
 
         // POST
         [HttpPost]
-        public async Task<IActionResult> CreateNewRequest(EmployeeRequest request)
+        public async Task<IActionResult> CreateNewRequest(EmployeeRequestService request)
         {
             var projectLeadId = await _userManager.FindByNameAsync(User.Identity?.Name);
 
-            if (ModelState.IsValid)
-            {
-                var requestForEmployee = new Request
-                {
-                    EmployeeId = request.EmployeeId,
-                    DepartmentLeadId = request.DepartmentLeadId,
-                    ProjectLeadId = projectLeadId.Id,
-                    StartDate = request.StartDate,
-                    EndDate = request.EndDate,
-                    ProjectId = request.ProjectId,
-                    RequestStatusId = request.RequestStatusId,
-                };
 
-                _requestRepository.CreateNewRequest(requestForEmployee);
+            projectLeadService.CreateNewRequest(request, projectLeadId);
 
-                return RedirectToAction("Index", "Home");
-            }
+            //if (ModelState.IsValid)
+            //{
+            //    var requestForEmployee = new Request
+            //    { 
+            //        EmployeeId = request.EmployeeId,
+            //        DepartmentLeadId = request.LeadId,
+            //        ProjectLeadId = projectLeadId.Id,
+            //        StartDate = request.StartDate,
+            //        EndDate = request.EndDate,
+            //        ProjectId = request.ProjectId,
+            //        RequestStatusId = request.RequestStatusId,
+            //        TeamLeadId = request.LeadId
+            //    };
 
-            return Problem();
+            //    _requestRepository.CreateNewRequest(requestForEmployee);
+
+              return RedirectToAction("Index", "Home");
+            //}
+
+            //return Problem();
         }
     }
 }
