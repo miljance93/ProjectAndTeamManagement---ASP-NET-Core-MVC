@@ -47,13 +47,15 @@ namespace ProjectAndTeamManagement.Controllers
         //GET
         public IActionResult ProjectManagement()
         {
-            var projects = _projectRepository.GetAllProjects;
+            var projects = _projectRepository.GetAllProjects.Where(x => x.ProjectId != 51);
             var employees = _employeeRepository.GetAll;
+            var projectStatuses = _projectStatusRepository.GetAllProjectStatuses;
 
             var project = new ListsVM
             {
                 Projects = projects,
                 Employees = employees,
+                ProjectStatuses = projectStatuses
             };
             return View(project);
         }

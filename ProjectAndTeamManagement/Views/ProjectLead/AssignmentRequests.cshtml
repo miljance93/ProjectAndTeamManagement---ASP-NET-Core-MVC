@@ -27,7 +27,14 @@
             {
                 <tr>
                     <td>@request.RequestId</td>
-                    <td>@Model.Employees.FirstOrDefault(x => x.Id == request.DepartmentLeadId)?.FullName</td>
+                    @if(request.TeamLeadId != null)
+                    {
+                        <td>@Model.Employees.FirstOrDefault(x => x.Id == request.TeamLeadId)?.FullName</td>
+                    }
+                    else
+                    {
+                        <td>@Model.Employees.FirstOrDefault(x => x.Id == request.DepartmentLeadId)?.FullName</td>
+                    }                    
                     <td>@request.Employee.FullName</td>
                     <td>@request.Project.Name</td>
                     <td>@request.StartDate</td>

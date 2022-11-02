@@ -39,7 +39,7 @@
                         <td>@employee.Team?.TeamName</td>
                         <td>@Model.Employees.FirstOrDefault(x => x.Id == employee.Team?.TeamLeadId)</td>
                         <td>
-                            @if (@employee.Project?.Name == null)
+                            @if (@employee.Project?.Name == "Unassigned")
                             {
                                 <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("AddEmployeeToProject", "Employee", employee)'">Add to project</button>
                             }

@@ -81,7 +81,7 @@ namespace ProjectAndTeamManagement.Controllers
                 employee.ProjectId = null;
 
                 await _userManager.UpdateAsync(employee);
-                return RedirectToAction("CurrentAssignments", "DepartmentLead");
+                return RedirectToAction("ProjectAssignment", "DepartmentLead");
             }
 
             return Problem();            
@@ -96,7 +96,7 @@ namespace ProjectAndTeamManagement.Controllers
                 employee.TeamId = 1;
 
                 await _userManager.UpdateAsync(employee);
-                return RedirectToAction("CurrentAssignments", "DepartmentLead");
+                return RedirectToAction("TeamManagement", "DepartmentLead");
             }
 
             return Problem();
@@ -154,7 +154,7 @@ namespace ProjectAndTeamManagement.Controllers
             employee.TeamId = team.TeamId;
             await _userManager.UpdateAsync(employee);
 
-            return RedirectToAction("CurrentAssignments", "DepartmentLead");
+            return RedirectToAction("TeamManagement", "DepartmentLead");
         }
     }
 }
