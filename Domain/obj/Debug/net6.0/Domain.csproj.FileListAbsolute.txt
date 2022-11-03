@@ -10,3 +10,15 @@ C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\refint\Domain.dll
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.pdb
 C:\Users\pja\source\repos\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\ref\Domain.dll
+D:\Project_And_Team_Managment_Demo\Domain\bin\Debug\net6.0\Domain.deps.json
+D:\Project_And_Team_Managment_Demo\Domain\bin\Debug\net6.0\Domain.dll
+D:\Project_And_Team_Managment_Demo\Domain\bin\Debug\net6.0\Domain.pdb
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.dll
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\refint\Domain.dll
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\Domain.pdb
+D:\Project_And_Team_Managment_Demo\Domain\obj\Debug\net6.0\ref\Domain.dll
