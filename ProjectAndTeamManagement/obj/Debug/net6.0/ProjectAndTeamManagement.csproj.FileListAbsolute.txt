@@ -841,3 +841,4 @@ C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManage
 C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\obj\Debug\net6.0\ProjectAndTeamManagement.pdb
 C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\obj\Debug\net6.0\ProjectAndTeamManagement.genruntimeconfig.cache
 C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\obj\Debug\net6.0\ref\ProjectAndTeamManagement.dll
+C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
