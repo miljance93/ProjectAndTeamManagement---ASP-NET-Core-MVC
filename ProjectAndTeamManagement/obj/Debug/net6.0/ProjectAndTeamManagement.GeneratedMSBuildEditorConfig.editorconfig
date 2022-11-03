@@ -8,113 +8,113 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectAndTeamManagement
 build_property.RootNamespace = ProjectAndTeamManagement
-build_property.ProjectDir = D:\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\
+build_property.ProjectDir = C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Project_And_Team_Managment_Demo\ProjectAndTeamManagement
+build_property.MSBuildProjectDirectory = C:\Users\milja\source\repos\Project_And_Team_Managment_Demo\ProjectAndTeamManagement
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/AssignmentRequests.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/AssignmentRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewProject.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewProject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3JlYXRlTmV3UHJvamVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewTeam.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CreateNewTeam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3JlYXRlTmV3VGVhbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CurrentAssignments.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/CurrentAssignments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcQ3VycmVudEFzc2lnbm1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectAssignment.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectAssignment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcUHJvamVjdEFzc2lnbm1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectManagement.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/ProjectManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcUHJvamVjdE1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/TeamManagement.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/DepartmentLead/TeamManagement.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwYXJ0bWVudExlYWRcVGVhbU1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/AddEmployeeToProject.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/AddEmployeeToProject.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRW1wbG95ZWVUb1Byb2plY3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/AssignEmployeeToTeam.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/AssignEmployeeToTeam.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQXNzaWduRW1wbG95ZWVUb1RlYW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/CreateEmployee.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Employee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Index.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Privacy.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/AssignmentRequests.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/AssignmentRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdExlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/CreateNewRequest.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/CreateNewRequest.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdExlYWRcQ3JlYXRlTmV3UmVxdWVzdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/CurrentAssignments.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/ProjectLead/CurrentAssignments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdExlYWRcQ3VycmVudEFzc2lnbm1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Error.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Index.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Login.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Logout.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvZ291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/AssignmentRequests.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/AssignmentRequests.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcQXNzaWdubWVudFJlcXVlc3RzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/CurrentAssignment.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/CurrentAssignment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcQ3VycmVudEFzc2lnbm1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/ProjectAssignment.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/TeamLead/ProjectAssignment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhbUxlYWRcUHJvamVjdEFzc2lnbm1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewImports.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewStart.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_Layout.cshtml]
+[C:/Users/milja/source/repos/Project_And_Team_Managment_Demo/ProjectAndTeamManagement/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-qhp4dc9ty4

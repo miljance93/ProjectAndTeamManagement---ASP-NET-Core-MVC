@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj": {}
+    "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "D:\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj": {
+    "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\milja\\.nuget\\packages\\",
-        "outputPath": "D:\\Project_And_Team_Managment_Demo\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,11 +51,11 @@
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[6.0.9, )"
+              "version": "[6.0.10, )"
             }
           },
           "imports": [

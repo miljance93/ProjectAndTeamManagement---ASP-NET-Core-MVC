@@ -35,7 +35,12 @@ namespace Persistence.Repo.Repositories
 
         public Team GetTeamById(int id)
         {
-            return _context.Teams.FirstOrDefault(x => x.TeamId == id);
+            var result =  _context.Teams.FirstOrDefault(x => x.TeamId == id);
+            if (result != null)
+            {
+                return result;
+            }
+            return null;
         }
     }
 }

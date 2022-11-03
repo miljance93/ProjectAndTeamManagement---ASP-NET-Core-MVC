@@ -2,6 +2,7 @@
 using Domain.IdentityAuth;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Persistence
 {
@@ -17,10 +18,5 @@ namespace Persistence
         public DbSet<RequestStatus> RequestStatuses { get; set; }
 
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.Entity<ApplicationUser>().HasData(
-                new ApplicationUser { Email = "admintest@test.com", PasswordHash = "Test12.", RoleId = "1" });
-        }
     }
 }
