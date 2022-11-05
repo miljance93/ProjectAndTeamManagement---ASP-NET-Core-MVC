@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Cv3CkpIJCV1b72AFzlr75CvMNaOVkpix2HledKl4cNhef4p4pz/vyz6HdeqHGeIFP4rxgCw2vabFC+VaiFzSLQ==",
+  "dgSpecHash": "6Dfxa6LvKenxM+XC2/wH/i0jMAqMf2aUFVVpuzC6FJR6isvtQ66qDDQvUXNsteWq2Y9Kq8EcVI77Ow7ShTua3Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\milja\\source\\repos\\Project_And_Team_Managment_Demo\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
@@ -96,6 +96,8 @@
     "C:\\Users\\milja\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\milja\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\milja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\milja\\.nuget\\packages\\npgsql\\6.0.7\\npgsql.6.0.7.nupkg.sha512",
+    "C:\\Users\\milja\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\6.0.7\\npgsql.entityframeworkcore.postgresql.6.0.7.nupkg.sha512",
     "C:\\Users\\milja\\.nuget\\packages\\nuget.common\\6.2.1\\nuget.common.6.2.1.nupkg.sha512",
     "C:\\Users\\milja\\.nuget\\packages\\nuget.configuration\\6.2.1\\nuget.configuration.6.2.1.nupkg.sha512",
     "C:\\Users\\milja\\.nuget\\packages\\nuget.dependencyresolver.core\\5.11.0\\nuget.dependencyresolver.core.5.11.0.nupkg.sha512",

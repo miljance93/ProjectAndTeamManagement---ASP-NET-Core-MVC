@@ -18,5 +18,10 @@ namespace Persistence
         public DbSet<RequestStatus> RequestStatuses { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<ApplicationUser>().HasData(
+                new ApplicationUser { Email = "admin@test.com", PasswordHash = "Test12", RoleId = "1" });
+        }
     }
 }
